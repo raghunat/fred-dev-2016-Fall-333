@@ -1,0 +1,47 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+     <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/patio"
+        android:scaleType="center"/>
+    <TextView
+        android:text="Prof Raghunath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="66sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@android:color/white"
+        android:background="#000077"
+        android:padding="20dp"/>
+    <TextView
+        android:text="Music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#ebebeb"
+        android:background="#0000b3"
+        android:padding="20dp"/>
+     <TextView
+        android:text="Unicyclist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#ebebeb"
+        android:background="#0000b3"
+        android:padding="20dp"/>
+     <TextView
+        android:text="Hot Dog Slayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#ebebeb"
+        android:background="#0000b3"
+        android:padding="20dp"/>   
+    
+</LinearLayout>
