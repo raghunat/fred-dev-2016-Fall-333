@@ -14,10 +14,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void startListViewActivity(View view) {
-        //TODO
         // 1. Create intent of that activity
         Intent intent = new Intent(this, ListViewActivity.class);
         // 2. Start that activity for a result
         startActivityForResult(intent, 1);
+    }
+
+    protected void startCustomListViewActivity (View view) {
+        // 1. Create intent of that activity
+        Intent intent = new Intent(this, CustomListViewActivity.class);
+        // 2. start that activity
+        startActivity(intent);
     }
 }

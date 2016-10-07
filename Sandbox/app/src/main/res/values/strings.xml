@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Sandbox</string>
+    <string name="custom_list_view_title">Custom Display List</string>
+    <string name="custom_list_view_description">
+        Using a list view with a custom item layout resource, in
+        conjunction with a custom list view adapter.
+    </string>
 </resources>
