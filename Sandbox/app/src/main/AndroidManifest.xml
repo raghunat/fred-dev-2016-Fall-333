@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListViewActivity" />
-        <activity android:name=".CustomListViewActivity"></activity>
+        <activity android:name=".CustomListViewActivity" />
+        <activity android:name=".SqlActivity"></activity>
     </application>
 
 </manifest>

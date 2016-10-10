@@ -26,4 +26,9 @@ public class MainActivity extends AppCompatActivity {
         // 2. start that activity
         startActivity(intent);
     }
+
+    protected  void startSQLActivity(View view) {
+        Intent intent = new Intent(this, SqlActivity.class);
+        startActivity(intent);
+    }
 }
