@@ -31,4 +31,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SqlActivity.class);
         startActivity(intent);
     }
+
+    protected void startHttpActivity(View view) {
+        Intent intent = new Intent(this, HttpActivity.class);
+        startActivity(intent);
+    }
 }

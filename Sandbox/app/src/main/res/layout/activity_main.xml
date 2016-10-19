@@ -25,6 +25,12 @@
             android:layout_height="88dp"
             android:text="SQL"
             android:onClick="startSQLActivity"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HTTP"
+            android:onClick="startHttpActivity"/>
     </LinearLayout>
 
 </LinearLayout>
