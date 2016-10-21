@@ -1,12 +1,19 @@
 package com.example.raghunat.sandbox;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,12 +24,13 @@ public class HttpActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     TextView responseTextView;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
-
+        context = this;
         progressBar = (ProgressBar)findViewById(R.id.progress_bar);
         responseTextView = (TextView)findViewById(R.id.response_text_view);
     }
@@ -85,10 +93,35 @@ public class HttpActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
 
             // Update the text view
-            responseTextView.setText(response);
+            // responseTextView.setText(response);
+
+
+            // Create a bunch of text view Objects for each post
+
+            try {
+                // Take a string and parse into an array of objects
+                JSONArray posts = (JSONArray) new JSONTokener(response).nextValue();
+                // Loop through the objects
+                for (int i = 0; i < posts.length(); i++) {
+                    // For each one, create 2 textviews, and set their text
+                    TextView title = new TextView(context);
+                    JSONObject post = (JSONObject)posts.getJSONObject(i);
+                    title.setText(post.getString("title"));
+                    title.setTextSize(36);
+                    TextView content = new TextView(context);
+                    content.setText(post.getString("body"));
+                    // Add each text view to the linear layout
+                    LinearLayout layout = (LinearLayout)findViewById(R.id.posts_layout);
+                    layout.addView(title);
+                    layout.addView(content);
+                }
+            } catch (JSONException e){
+
+            }
+
+
+
         }
 
     }
-
-
 }
