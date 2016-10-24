@@ -21,7 +21,8 @@
         <activity android:name=".CustomListViewActivity" />
         <activity android:name=".SqlActivity" />
         <activity android:name=".HttpActivity" />
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".FileActivity"></activity>
     </application>
 
 </manifest>

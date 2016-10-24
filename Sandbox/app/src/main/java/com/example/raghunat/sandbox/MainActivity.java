@@ -41,4 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CameraActivity.class);
         startActivity(intent);
     }
+
+    protected void startFileActivity(View view) {
+        Intent intent = new Intent(this, FileActivity.class);
+        startActivity(intent);
+    }
 }
