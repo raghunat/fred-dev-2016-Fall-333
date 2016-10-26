@@ -24,7 +24,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New File"/>
+        android:text="New File"
+        android:onClick="createFile"/>
 
     <ScrollView
         android:layout_width="match_parent"
