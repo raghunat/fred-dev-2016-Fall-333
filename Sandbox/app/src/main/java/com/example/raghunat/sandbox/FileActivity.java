@@ -1,10 +1,14 @@
 package com.example.raghunat.sandbox;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -37,6 +41,33 @@ public class FileActivity extends AppCompatActivity {
             Log.e("Error", e.getMessage());
         }
     }
+
+    public void startCamera(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 0); // 0 is my id for this intent
+    }
+    // RUNs on Intent Results from this activity
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0) { // 0 is the camera intent
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            String photoName = "My photo.jpg";
+            FileOutputStream stream;
+
+            try {
+                stream = openFileOutput(photoName, Context.MODE_PRIVATE);
+                photo.compress(Bitmap.CompressFormat.JPEG, 80, stream);
+                stream.flush();
+                stream.close();
+            } catch(Exception e) {
+                Log.e("Error", e.getMessage());
+            }
+        }
+    }
+
+
+
+
+
 
     protected void listFiles(View view) {
         LinearLayout ll = (LinearLayout) findViewById(R.id.files_list);

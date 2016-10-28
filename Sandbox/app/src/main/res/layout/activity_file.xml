@@ -26,6 +26,11 @@
         android:layout_height="wrap_content"
         android:text="New File"
         android:onClick="createFile"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take Picture"
+        android:onClick="startCamera"/>
 
     <ScrollView
         android:layout_width="match_parent"
