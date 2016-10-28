@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WordDroid</string>
+    <string name="login">Login</string>
+    <string name="username">Loser-name</string>
+    <string name="password">Spaz-sword</string>
+    <string name="register">Regi$ter</string>
+    <string name="need_register">You need to register first!</string>
+</resources>
