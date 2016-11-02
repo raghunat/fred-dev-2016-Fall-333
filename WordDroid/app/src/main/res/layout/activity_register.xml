@@ -36,5 +36,6 @@
         android:textSize="24sp"
         android:textColor="#fff"
         android:background="@color/colorPrimaryDark"
-        android:layout_marginTop="36dp"/>
+        android:layout_marginTop="36dp"
+        android:onClick="registerClick"/>
 </LinearLayout>
