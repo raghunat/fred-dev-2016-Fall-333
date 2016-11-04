@@ -1,5 +1,6 @@
 package com.example.raghunat.worddroid;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,10 +21,12 @@ public class RegisterActivity extends AppCompatActivity {
         EditText passwordField = (EditText)findViewById(R.id.register_password);
         String username = usernameField.getText().toString();
         String password = passwordField.getText().toString();
-        // TODO Register a user, and if successful
+        // Register a user, and if successful
         try {
             UserHelper.CreateUser(username, password);
             // Close intent, if not, Toast error
+            setResult(Activity.RESULT_OK, getIntent());
+            this.finish();
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
