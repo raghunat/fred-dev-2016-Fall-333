@@ -17,7 +17,7 @@ public class UserHelper {
     public static DatabaseHandler db;
 
     public static void openDB(Context context) {
-        if(db != null) {
+        if(db == null) {
             db = new DatabaseHandler(context);
         }
     }
@@ -32,8 +32,7 @@ public class UserHelper {
             throw new Exception("Password cannot be the username");
         }
         // TODO SAVE INTO DB
-        usernames.add(username);
-        passwords.add(password);
+        db.createUser(username, password);
     }
 
     public static boolean AuthenticateUser(String username, String password) {

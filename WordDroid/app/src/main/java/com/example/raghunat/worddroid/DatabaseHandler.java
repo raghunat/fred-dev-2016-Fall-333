@@ -1,5 +1,6 @@
 package com.example.raghunat.worddroid;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,11 +26,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public User getUserByName(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = " + name, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = '" + name + "'", null);
         if(cursor.moveToFirst()) {
             User user = new User(cursor.getString(1), cursor.getString(2));
             return user; // Found user
         }
         return null; // No user found
+    }
+
+    public void createUser(String username, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("username", username);
+        cv.put("password", password);
+
+        // Write to database
+        db.insert("users", null, cv);
+        db.close();
     }
 }
